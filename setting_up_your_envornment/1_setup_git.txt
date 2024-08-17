@@ -1,0 +1,176 @@
+Certainly! Below is the revised lab exercise that includes the steps for setting up Git, including configuring the user name and email, along with the SSH key setup for both GitLab and GitHub.
+
+---
+
+### Lab Exercise 1: Setting Up Git and SSH Keys for GitLab and GitHub
+
+**Objective**: By the end of this lab, you will be able to set up Git, configure your user information, generate an SSH key pair, and add the public key to both your GitLab and GitHub accounts for secure authentication.
+
+---
+
+#### Prerequisites
+
+- A computer with Git installed.
+- Access to a terminal or command prompt (Command Prompt, PowerShell, or Git Bash on Windows; Terminal on macOS/Linux).
+- Accounts on both GitLab and GitHub.
+
+---
+
+### Part 1: Set Up Git
+
+**Step 1: Open Your Terminal**
+
+- Open your terminal or command prompt.
+
+**Step 2: Configure Your User Name and Email**
+
+- Set your Git user name by running the following command. Replace `"Your Name"` with your actual name:
+
+```bash
+git config --global user.name "Your Name"
+```
+
+- Set your Git email address by running the following command. Replace `"your.email@example.com"` with your actual email address:
+
+```bash
+git config --global user.email "your.email@example.com"
+```
+
+**Step 3: Verify Your Configuration**
+
+- To verify that your configuration settings are correct, run:
+
+```bash
+git config --list
+```
+
+- This command will display your user name and email, along with other configuration settings.
+
+---
+
+### Part 2: Generate SSH Key Pair
+
+**Step 4: Generate the SSH Key Pair**
+
+- Run the following command to generate a new SSH key pair. Replace `your_email@example.com` with your actual email address:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+- When prompted, press Enter to accept the default file location (usually `~/.ssh/id_rsa`).
+
+- You can also set a passphrase for added security, or press Enter to leave it empty.
+
+**Step 5: Start the SSH Agent**
+
+- Start the SSH agent in the background:
+
+```bash
+eval $(ssh-agent -s)
+```
+
+**Step 6: Add Your SSH Key to the SSH Agent**
+
+- Add your SSH private key to the SSH agent:
+
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
+---
+
+### Part 3: Add SSH Key to GitLab
+
+**Step 7: Copy the SSH Public Key**
+
+- Copy the contents of your public key to the clipboard. You can use the following command:
+
+```bash
+clip < ~/.ssh/id_rsa.pub  # For Windows
+```
+
+```bash
+pbcopy < ~/.ssh/id_rsa.pub  # For macOS
+```
+
+```bash
+cat ~/.ssh/id_rsa.pub  # For Linux (then manually copy the output)
+```
+
+**Step 8: Log in to GitLab**
+
+- Open your web browser and log in to your GitLab account.
+
+**Step 9: Navigate to SSH Keys Settings**
+
+- Click on your profile picture in the top right corner and select **Preferences**.
+- In the left sidebar, click on **SSH Keys**.
+
+**Step 10: Add Your SSH Key**
+
+- In the **Key** field, paste your SSH public key that you copied earlier.
+- Optionally, you can add a title to identify the key (e.g., "My Laptop SSH Key").
+- Click the **Add key** button.
+
+---
+
+### Part 4: Add SSH Key to GitHub
+
+**Step 11: Log in to GitHub**
+
+- Open your web browser and log in to your GitHub account.
+
+**Step 12: Navigate to SSH and GPG Keys Settings**
+
+- Click on your profile picture in the top right corner and select **Settings**.
+- In the left sidebar, click on **SSH and GPG keys**.
+
+**Step 13: Add Your SSH Key**
+
+- Click the **New SSH key** button.
+- In the **Title** field, add a descriptive label for the key (e.g., "My Laptop SSH Key").
+- In the **Key** field, paste your SSH public key that you copied earlier.
+- Click the **Add SSH key** button.
+
+---
+
+### Part 5: Test Your SSH Connection
+
+**Step 14: Test the SSH Connection to GitLab**
+
+- In your terminal, run the following command to test the connection to GitLab:
+
+```bash
+ssh -T git@gitlab.com
+```
+
+- If everything is set up correctly, you should see a message like:
+
+```
+Welcome to GitLab, @your_username!
+```
+
+**Step 15: Test the SSH Connection to GitHub**
+
+- In your terminal, run the following command to test the connection to GitHub:
+
+```bash
+ssh -T git@github.com
+```
+
+- If everything is set up correctly, you should see a message like:
+
+```
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+---
+
+### Conclusion
+
+Congratulations! You have successfully set up Git, configured your user information, and set up SSH keys for both your GitLab and GitHub accounts. You can now use SSH for secure authentication when interacting with your repositories on both platforms.
+
+---
+
+Feel free to adjust the content of this lab to fit your audience's needs or to add more complexity as they become more comfortable with Git and SSH!

@@ -1,0 +1,138 @@
+Certainly! Below is a structured lab exercise designed to guide learners through the process of installing Python on their systems. This lab includes steps for both Windows and macOS/Linux users.
+
+---
+
+### Lab Exercise: Installing Python
+
+**Objective**: By the end of this lab, you will be able to install Python on your computer and verify the installation.
+
+---
+
+#### Prerequisites
+
+- A computer with internet access.
+- Administrative privileges to install software.
+
+---
+
+### Part 1: Downloading Python
+
+**Step 1: Open Your Web Browser**
+
+- Open your preferred web browser (e.g., Chrome, Firefox, Safari).
+
+**Step 2: Navigate to the Python Download Page**
+
+- Go to the official Python website: [python.org/downloads](https://www.python.org/downloads/).
+
+**Step 3: Download the Installer**
+
+- You will see a button for the latest version of Python (e.g., "Download Python 3.x.x"). Click on this button to download the installer.
+
+---
+
+### Part 2: Installing Python on Windows
+
+**Step 4: Run the Installer**
+
+- Locate the downloaded installer (usually in your Downloads folder) and double-click it to run.
+
+**Step 5: Customize Installation (Optional)**
+
+- On the installation screen, make sure to check the box that says **"Add Python to PATH"**. This is important for running Python from the command line.
+- Click on **"Customize installation"** if you want to select optional features (like pip, documentation, etc.), or click **"Install Now"** to proceed with the default installation.
+
+**Step 6: Complete the Installation**
+
+- Wait for the installation to complete. Once finished, you will see a screen that says "Setup was successful." Click **"Close"**.
+
+---
+
+### Part 3: Installing Python on macOS
+
+**Step 4: Run the Installer**
+
+- Locate the downloaded `.pkg` installer file (usually in your Downloads folder) and double-click it to run.
+
+**Step 5: Follow the Installation Wizard**
+
+- Follow the prompts in the installation wizard. Click **"Continue"** to proceed through the steps.
+- You may need to agree to the license agreement and select the installation location (the default is usually fine).
+
+**Step 6: Complete the Installation**
+
+- Click **"Install"** to begin the installation. You may be prompted to enter your macOS password.
+- Once the installation is complete, click **"Close"**.
+
+---
+
+### Part 4: Installing Python on Linux
+
+**Step 4: Open Terminal**
+
+- Open your terminal application.
+
+**Step 5: Update Package List**
+
+- Before installing Python, update your package list by running:
+
+```bash
+sudo apt update  # For Debian/Ubuntu-based systems
+```
+
+**Step 6: Install Python**
+
+- Run the following command to install Python 3:
+
+```bash
+sudo apt install python3
+```
+
+- You may also want to install `pip`, the package manager for Python:
+
+```bash
+sudo apt install python3-pip
+```
+
+---
+
+### Part 5: Verifying the Installation
+
+**Step 7: Open Command Line or Terminal**
+
+- Open Command Prompt (Windows), Terminal (macOS), or your terminal application (Linux).
+
+**Step 8: Check Python Version**
+
+- Run the following command to check if Python is installed and to see the version:
+
+```bash
+python --version  # or python3 --version on macOS/Linux
+```
+
+- You should see output indicating the version of Python installed (e.g., `Python 3.x.x`).
+
+**Step 9: Check pip Version**
+
+- Run the following command to check if `pip` is installed:
+
+```bash
+pip --version  # or pip3 --version on macOS/Linux
+```
+
+- You should see output indicating the version of `pip` installed.
+
+---
+
+### Conclusion
+
+Congratulations! You have successfully installed Python on your computer and verified the installation. You are now ready to start programming in Python.
+
+### Optional Challenge
+
+- Explore the Python documentation at [docs.python.org](https://docs.python.org/3/) to learn more about Python features and libraries.
+- Try writing a simple Python script to print "Hello, World!" to the console.
+
+---
+
+Feel free to adjust the content of this lab to fit your audience's needs or to add more complexity as they become more comfortable with Python!
